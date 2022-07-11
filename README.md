@@ -5,4 +5,4 @@ Simple program to automate manually moving individual files from Downloads folde
 > Resources:
 > [pynative](https://pynative.com/python-move-files/)
 
-The program can be run using the automateDownloads.sh file
+The program can be run using the automateDownloads.sh file - if you want to you use it you will need to change the directory variables in the Python code itself and the directory of the repo in the shell file.
