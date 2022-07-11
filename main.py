@@ -4,12 +4,11 @@ import shutil
 sourceDir = "C:/Users/odhra/Downloads/"
 documentDir = "C:/Users/odhra/Documents/"
 musicDir = "C:/Users/odhra/Music/"
-pdfDir = "C:/Users/odhra/Documents/PDFs/"
+pdfDir = "C:/Users/odhra/Documents/PDFs"
 imageDir = "C:/Users/odhra/Pictures/"
 videoDir = "C:/Users/odhra/Videos/"
 
-documentExtensions = [".doc", ".docx", ".odt",
-                       ".pdf", ".xls", ".xlsx", ".ppt", ".pptx"]
+documentExtensions = [".doc", ".docx", ".odt", ".xls", ".xlsx", ".ppt", ".pptx"]
 
 musicExtensions = [".m4a", ".flac", "mp3", ".wav", ".wma", ".aac"]
 
@@ -56,4 +55,5 @@ with os.scandir(sourceDir) as entries:
         checkDocument(name)
         checkImage(name)
         checkVideo(name)
+        checkPDF(name)
             
