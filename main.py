@@ -24,40 +24,58 @@ videoExtensions = [".webm", ".mpg", ".mp2", ".mpeg", ".mpe", ".mpv", ".ogg",
 def checkBook(name):
     for bookExtension in bookExtensions:
         if name.endswith(bookExtension) or name.endswith(bookExtension.upper()):
-            print(f"Moved book file: {name} to {bookDir}")
+            if(fileExists(videoDir, name)):
+                print("File already exists - Skipping . .")
+            else:
+                shutil.move(sourceDir+name, bookDir)
+                print(f"Moved book file: {name} to {bookDir}")
 
 def checkDocument(name):
     for documentExtension in documentExtensions:
         if name.endswith(documentExtension) or name.endswith(documentExtension.upper()):
-            shutil.move(sourceDir+name, documentDir)
-            print(f"Moved document file: {name} to {documentDir}")
+            if(fileExists(documentDir, name)):
+                print("File already exists - Skipping . .")
+            else:         
+                shutil.move(sourceDir+name, documentDir)
+                print(f"Moved document file: {name} to {documentDir}")
             
 def checkImage(name):
     for imageExtension in imageExtensions:
         if name.endswith(imageExtension) or name.endswith(imageExtension.upper()):
-            shutil.move(sourceDir+name, imageDir)
-            print(f"Moved image file: {name} to {imageDir}")
+            if(fileExists(imageDir, name)):
+                print("File already exists - Skipping . .")
+            else:
+                shutil.move(sourceDir+name, imageDir)
+                print(f"Moved image file: {name} to {imageDir}")
             
 def checkMusic(name):
     for musicExtension in musicExtensions:
         if name.endswith(musicExtension) or name.endswith(musicExtension.upper()):
-            shutil.move(sourceDir+name, musicDir)
-            print(f"Moved music file: {name} to {musicDir}")
+            if(fileExists(musicDir, name)):
+                print("File already exists - Skipping . .")
+            else:
+                shutil.move(sourceDir+name, musicDir)
+                print(f"Moved music file: {name} to {musicDir}")
             
 def checkPDF(name):
     if name.endswith(".pdf") or name.endswith(".pdf".upper()):
-        shutil.move(sourceDir+name, pdfDir)
-        print(f"Moved PDF file: {name} to {pdfDir}")
+        if(fileExists(pdfDir, name)):
+            print("File already exists - Skipping . .")
+        else:
+            shutil.move(sourceDir+name, pdfDir)
+            print(f"Moved PDF file: {name} to {pdfDir}")
             
 def checkVideo(name):
     for videoExtension in videoExtensions:
         if name.endswith(videoExtension) or name.endswith(videoExtension.upper()):
-            shutil.move(sourceDir+name, videoDir)
-            print(f"Moved video file: {name} to {videoDir}")
+            if(fileExists(videoDir, name)):
+                print("File already exists - Skipping . .")
+            else:
+                shutil.move(sourceDir+name, videoDir)
+                print(f"Moved video file: {name} to {videoDir}")
 
-def fileExists(name):
-    #Check if file already exists if it does, skip it
-    return
+def fileExists(directory ,name):
+    return os.path.exists(directory + '/' + name)
 
 with os.scandir(sourceDir) as entries:
     for entry in entries:
