@@ -55,7 +55,9 @@ def checkVideo(name):
             shutil.move(sourceDir+name, videoDir)
             print(f"Moved video file: {name} to {videoDir}")
 
-
+def fileExists(name):
+    #Check if file already exists if it does, skip it
+    return
 
 with os.scandir(sourceDir) as entries:
     for entry in entries:
