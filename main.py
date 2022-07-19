@@ -66,4 +66,3 @@ with os.scandir(sourceDir) as entries:
         checkMusic(name)
         checkPDF(name)
         checkVideo(name)
-            
